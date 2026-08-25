@@ -46,12 +46,12 @@ cols = K:Ca,
 names_to = "ions",
 values_to = "concentration")
 
-ggplot(prm_longer, mapping = 
+prm_graph <- ggplot(prm_longer, mapping = 
   aes(x = Sample_Date, y = concentration, color = ions) ) +
   geom_line() +
   facet_wrap(~ions, scales = "free", ncol = 1) +
   theme_bw()
-
+prm_graph
 
 bq1_longer <- pivot_longer(bq1_sub, 
 cols = K:Ca, 
