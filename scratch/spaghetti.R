@@ -1,4 +1,5 @@
 library(tidyverse)
+source("R/moving-average.R")
 
 # load the data
 
@@ -102,87 +103,18 @@ ggplot(bq3_longer, mapping =
 window_start <- seq(ymd("1988-01-01"), ymd("1994-12-31"), by = "9 weeks")
 window_end <- window_start + weeks(9)
 
-prm_smoothed <- tibble(
-  window_start,
-  window_end,
-  mean_k = NA,
-  mean_mg = NA,
-  mean_no3 = NA,
-  mean_ca = NA,
-  mean_nh4 = NA
-)
-prm_smoothed
 
+prm_ma <- moving_average(prm_sub)
+prm_ma
 
+bq1_ma <- moving_average(bq1_sub)
+bq1_ma
 
-for (i in 1:nrow(prm_smoothed)) {
-  # i is our iterator
-  # 1:nrow(qs_smoothed) is our sequence
-  # i will take on those values, one at a time
+bq2_ma <- moving_average(bq2_sub)
+bq2_ma
 
-  
-  start_date <- window_start[i]
-  end_date <- window_end[i]
-
-  # what potassium values are inside that window?
-  sample_k <- prm_sub$K[
-    start_date <= prm_sub$Sample_Date &
-      end_date > prm_sub$Sample_Date
-  ]
-  # what's the mean?
-  mean_k <- mean(sample_k, na.rm = TRUE)
-  
-  
-  # magnesium values
-  mean_mg <- mean(
-    prm_sub$Mg[
-      start_date <= prm_sub$Sample_Date &
-        end_date > prm_sub$Sample_Date
-    ],
-    na.rm = TRUE
-  )
-
-  # calcium 
-  mean_ca <- mean(
-    prm_sub$Ca[
-      start_date <= prm_sub$Sample_Date &
-        end_date > prm_sub$Sample_Date
-    ],
-    na.rm = TRUE
-  )
-
-  # nitrate
-  mean_no3 <- mean(
-   prm_sub$`NO3-N`[
-     start_date <= prm_sub$Sample_Date &
-       end_date > prm_sub$Sample_Date
-    ],
-    na.rm = TRUE
-  )
-
-  # ammonium 
-  mean_nh4 <- mean(
-   prm_sub$`NH4-N`[
-     start_date <= prm_sub$Sample_Date &
-       end_date > prm_sub$Sample_Date
-    ],
-    na.rm = TRUE
-  )
-
-
-  # how do you put it in the result?
-  
-
-  prm_smoothed$mean_k[i] <- mean_k
-  prm_smoothed$mean_mg[i] <- mean_mg
-  prm_smoothed$mean_ca[i] <- mean_ca
-  prm_smoothed$mean_no3[i] <- mean_no3
-  prm_smoothed$mean_nh4[i] <- mean_nh4
-
-
-}
-
-tail(prm_smoothed)
+bq3_ma <- moving_average(bq3_sub)
+bq3_ma
 
 
 
@@ -191,9 +123,9 @@ tail(prm_smoothed)
 # try to graph moving average --------------------------------------------
 
 
-prm_pivot <- prm_smoothed |>
+prm_pivot <- prm_ma |>
   pivot_longer(
-    cols = c(mean_k, mean_mg, mean_no3, mean_ca, mean_nh4),
+    cols = c(k_mgl, mg_mgl, no3_mgl, ca_mgl, nh4_ugl),
     names_to = "ion",
     values_to = "mean_concentration"
   )
@@ -204,6 +136,10 @@ ggplot(prm_pivot, mapping =
   geom_line() +
   facet_wrap(~ion, scales = "free", ncol = 1) +
   theme_bw()
+
+
+
+
 
 
 
