@@ -18,13 +18,15 @@ Data for each stream is seperated into different .csv files.
 ```{r}
 # load package
 library(tidyverse)
-read_csv("output/output.csv")
+streams_pivot <- read_csv("../output/output.csv")
 ```
 
 
 # Methods
 
 ```{r}
+#| echo: false 
+#| warning: false
 ggplot(
   streams_pivot,
   mapping = aes(

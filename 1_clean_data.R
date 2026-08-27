@@ -4,10 +4,10 @@ source("R/moving-average.R")
 
 # load  ----------------------------------------------------------
 
-prm <- read_csv("data/knb-lter-luq/RioMameyesPuenteRoto.csv")
-bq1 <- read_csv("data/knb-lter-luq/QuebradaCuenca1-Bisley.csv")
-bq2 <- read_csv("data/knb-lter-luq/QuebradaCuenca2-Bisley.csv")
-bq3 <- read_csv("data/knb-lter-luq/QuebradaCuenca3-Bisley.csv")
+prm <- read_csv("data/RioMameyesPuenteRoto.csv")
+bq1 <- read_csv("data/QuebradaCuenca1-Bisley.csv")
+bq2 <- read_csv("data/QuebradaCuenca2-Bisley.csv")
+bq3 <- read_csv("data/QuebradaCuenca3-Bisley.csv")
 
 
 # clean  ---------------------------------------------------------
@@ -39,9 +39,7 @@ bq3_ma <- moving_average(bq3_sub)
 
 # combine the dataframes -------------------------------------------------
 
-streams <- rbind(prm_ma, bq1_ma, bq2_ma, bq3_ma) |>
-  filter(Sample_Date >= ymd("1988-01-01") & Sample_Date < ymd("1994-12-31"))
-
+streams <- rbind(prm_ma, bq1_ma, bq2_ma, bq3_ma) 
 
 # pivot all streams ------------------------------------------------------
 

@@ -86,8 +86,7 @@ ggplot(
   mapping = aes(x = window_start, y = mean_concentration, color = ion)
 ) +
   geom_line() +
-  facet_wrap(~ion, scales = "free", ncol = 1)
-m +
+  facet_wrap(~ion, scales = "free", ncol = 1) +
   labs(x = "Date", y = "ion concentration", title = " PRM") +
   theme_bw()
 
