@@ -21,6 +21,9 @@ library(tidyverse)
 read_csv("output/output.csv")
 ```
 
+
+# Methods
+
 ```{r}
 ggplot(
   streams_pivot,
@@ -44,11 +47,7 @@ ggplot(
 
 
 
-```{r}
 
-```
-
-# Methods
 
 
 
