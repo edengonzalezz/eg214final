@@ -40,7 +40,7 @@ bq3_ma <- moving_average(bq3_sub)
 # combine the dataframes -------------------------------------------------
 
 streams <- rbind(prm_ma, bq1_ma, bq2_ma, bq3_ma) |>
-  filter(Sample_Date >= ymd("1988-01-01") & Sample_Date < ymd("1994-12-31"))
+  filter(window_start >= ymd("1988-01-01") & window_start < ymd("1994-12-31"))
 
 
 # pivot all streams ------------------------------------------------------
