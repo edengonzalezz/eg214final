@@ -16,6 +16,8 @@ Data for each stream is seperated into different .csv files.
 
 
 ```{r}
+#| echo: false 
+#| warning: false
 # load package
 library(tidyverse)
 streams_pivot <- read_csv("../output/output.csv")
