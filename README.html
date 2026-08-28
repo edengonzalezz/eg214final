@@ -53,26 +53,59 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="ion-concentrations-in-puerto-rico-streams-before-and-after-hurricane-hugo." class="level1">
-<h1>Ion concentrations in Puerto Rico streams before and after Hurricane Hugo.</h1>
+<section id="ion-concentrations-in-puerto-rico-streams-before-and-after-hurricane-hugo-1989" class="level1">
+<h1>Ion concentrations in Puerto Rico streams before and after Hurricane Hugo (1989)</h1>
 <section id="purpose" class="level2">
 <h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
-<p>R code for the replication of Figure 3 of the paper by Schaefer et al.&nbsp;(2000), which graphs the concentration of five different ions in different streams in Puerto Rico. The graph places year on the x-axis (1988-1994) facets by ion (potassium, nitrate, magnesium, calcium, and amonium) and plots the 9-week moving average concentration by four stream (Puente Roto Mameyes, Bisley Quebrada 1, Bisley Quebrada 2, Bisley Quebrada 3).</p>
+<p>This repository contains R code for the replication of Figure 3 from <a href="https://www.cambridge.org/core/journals/journal-of-tropical-ecology/article/effects-of-hurricane-disturbance-on-stream-water-concentrations-and-fluxes-in-eight-tropical-forest-watersheds-of-the-luquillo-experimental-forest-puerto-rico/2511D4A53DA2C95406014ED75441E77B">Schaefer et al.&nbsp;(2000)</a>, which graphs the concentration of five different ions in different streams in Puerto Rico before and after Hurricane Hugo. The graph places Year on the x-axis (1988-1994) facets by ion (potassium, nitrate, magnesium, calcium, and amonium), and plots the 9-week moving average ion concentrations among four streams (Puente Roto Mameyes, Bisley Quebrada 1, Bisley Quebrada 2, Bisley Quebrada 3) on the y-axis.</p>
+<p><img src="figure3schaefer2000.png" class="img-fluid"></p>
 </section>
-<section id="what-is-in-the-repo" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-in-the-repo">What is in the repo?</h2>
-<p>The GitHub reprository has the following structure: * /data contains the downloaded zip file. * /analyses</p>
+<section id="contents" class="level2">
+<h2 class="anchored" data-anchor-id="contents">Contents</h2>
+<p>The GitHub reprository contains the following:</p>
+<ul>
+<li>data/
+<ul>
+<li>four downloaded .csv files, each corresponding to a stream in the study.</li>
+</ul></li>
+<li>docs/
+<ul>
+<li>paper.html, the rendered quarto document of analysis.</li>
+</ul></li>
+<li>figs/
+<ul>
+<li>.png of rendered figure from paper.qmd</li>
+</ul></li>
+<li>output/
+<ul>
+<li>output.csv, a cleaned .csv file that combines all files in data/ into a single file to be used for analysis.</li>
+</ul></li>
+<li>paper/
+<ul>
+<li>paper.qmd, which runs the analysis and generates the figure.</li>
+</ul></li>
+<li>R/
+<ul>
+<li>moving_average.R, which creates a function that calculates the 9-week moving average of ion concentrations for each stream.</li>
+</ul></li>
+<li>scratch/
+<ul>
+<li>exploratory R scripts.</li>
+</ul></li>
+</ul>
 </section>
 <section id="data-access" class="level2">
 <h2 class="anchored" data-anchor-id="data-access">Data access</h2>
-<p>The .zip file containing the data provided by the Environmental Data Initiative were downloaded from here: McDowell and International Institute Of Tropical Forestry (IITF) 2024.</p>
+<p>The .zip file containing the data provided by the Environmental Data Initiative were downloaded from <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064">McDowell and International Institute Of Tropical Forestry (IITF) 2024</a>.</p>
 </section>
 <section id="contributors" class="level2">
 <h2 class="anchored" data-anchor-id="contributors">Contributors</h2>
+<p><span class="citation" data-cites="Karlavramos">@Karlavramos</span> <span class="citation" data-cites="olivrwitt">@olivrwitt</span></p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Schaefer, Douglas. A., William H. McDowell, Fredrick N. Scatena, and Clyde E. Asbury. 2000. “Effects of Hurricane Disturbance on Stream Water Concentrations and Fluxes in Eight Tropical Forest Watersheds of the Luquillo Experimental Forest, Puerto Rico.” Journal of Tropical Ecology 16 (2): 189–207. https://doi.org/10.1017/s0266467400001358.</p>
+<p>McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024. “Chemistry of Stream Water from the Luquillo Mountains.” Environmental Data Initiative. <a href="https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458">https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458</a>.</p>
+<p>Schaefer, Douglas. A., William H. McDowell, Fredrick N. Scatena, and Clyde E. Asbury. 2000. “Effects of Hurricane Disturbance on Stream Water Concentrations and Fluxes in Eight Tropical Forest Watersheds of the Luquillo Experimental Forest, Puerto Rico.” Journal of Tropical Ecology 16 (2): 189–207. <a href="https://doi.org/10.1017/s0266467400001358">https://doi.org/10.1017/s0266467400001358.</a>.</p>
 </section>
 </section>
 
