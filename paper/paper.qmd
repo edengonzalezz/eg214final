@@ -3,7 +3,9 @@ title: "Time series of ion concentrations in Puerto Rico streams before and afte
 format: html
 ---
 
-![[Source](https://www.wbtw.com/news/grand-strand/remembering-hurricane-hugo-35-years-later/)](https://www.wbtw.com/wp-content/uploads/sites/22/2024/09/Screenshot-2024-09-21-080156.png?strip=1)
+![*Trajectory of Hurricane Hugo.* [Source](https://www.wbtw.com/news/grand-strand/remembering-hurricane-hugo-35-years-later/)](https://www.wbtw.com/wp-content/uploads/sites/22/2024/09/Screenshot-2024-09-21-080156.png?strip=1)
+
+
 
 ### Background 
 
@@ -15,7 +17,9 @@ Ion concentrations of potassium (K), nitrate (NO3-), magnesium (Mg), calcium (Ca
 Data is downloaded from [McDowell and International Institute Of Tropical Forestry (IITF) 2024](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064). 
 
 ### Methods
-All .csv files are cleaned using 1_clean_data.R and moved into a output/output.csv. 1_clean_data.R filters individual .csv files for relevant dates (1988-1994) and selects only relevant columns (Sample_ID, Sample_Date, K, NO3-N, NH4-N, Mg, Ca). Then, moving_average() function, defined in R/moving-average.R, is applied to each individually subsetted data frame to calculate the 9-week moving averages. The resulting four dataframes are binded by rows and pivoted longer for faceting by ion. 
+
+To replicate the figure, cleaning and wrangling were performed. Data were individually filtered for relvant dates and ion columns. Upon completion, the the 9-week moving average for each site were calculated and combined into one data frame. The ion columns were then put into into one column to facillate plotting. 
+
 
 ```{r}
 #| output: false
@@ -29,9 +33,7 @@ library(tidyverse)
 streams_pivot <- read_csv("../output/output.csv")
 ```
 
-Use ggplot to plot data. 
 
-Plot time on the x-axis, and mean ion concentration on the y-axis. Facet_wrap() by ion and stack them over each other. Add a vertical line on September 17, 1989 to represent date of Hurricane Hugo event. 
 
 
 ```{r}
@@ -42,6 +44,8 @@ streams_pivot$ion <- factor(
 )
 ```
 
+
+Plot time on the x-axis, and mean ion concentration on the y-axis. The vertical line on September 17, 1989 to represent date of Hurricane Hugo event. 
 
 
 ```{r}
@@ -70,7 +74,21 @@ fig3 <- ggplot(
 
 Print the result.
 
+The graph shows the ion concentration in four Puerto Rico streams: Rio Mameyes Puente Roto (PRM), Bisley Quebradas 1, Bisley Quebradas 2, Bisley Quebradas 3. Specifically, the figure plots the concentrations of potassium (K mg l-1), nitrate (NO3 µg l-1), magnesium (mg l-1), calcium (mg l-1), ammonium (NH4 ug l-1) from 1988-1994. 
+
+
 ```{r}
 #| warning: false
 fig3
 ```
+
+
+
+## References 
+
+McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024. “Chemistry of Stream Water from the Luquillo Mountains.” Environmental Data Initiative. [https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458](https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458).
+
+
+Schaefer, Douglas. A., William H. McDowell, Fredrick N. Scatena, and Clyde E. Asbury. 2000. “Effects of Hurricane Disturbance on Stream Water Concentrations and Fluxes in Eight Tropical Forest Watersheds of the Luquillo Experimental Forest, Puerto Rico.” Journal of Tropical Ecology 16 (2): 189–207. [https://doi.org/10.1017/s0266467400001358.](https://doi.org/10.1017/s0266467400001358).
+
+

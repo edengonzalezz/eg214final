@@ -23,7 +23,7 @@ The GitHub reprository contains the following:
 * docs/
     - paper.html, the rendered quarto document of analysis.
 * figs/
-    - .png of rendered figure from paper.qmd
+    - .png of Schaefer et al.'s (2000) Figure 3. 
 * output/
     - output.csv, a cleaned .csv file that combines all files in data/ into a single file to be used for analysis.
 * paper/  
@@ -39,10 +39,17 @@ The GitHub reprository contains the following:
 
 The .zip file containing the data provided by the Environmental Data Initiative were downloaded from [McDowell and International Institute Of Tropical Forestry (IITF) 2024](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064).
 
-## Contributors
+## Authors & Contributors
+
+@edengonzalezz
 
 @Karlavramos
+
 @olivrwitt
+
+
+
+
 
 ## References 
 
