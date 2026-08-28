@@ -3,37 +3,49 @@ title: "Time series of ion concentrations in Puerto Rico streams before and afte
 format: html
 ---
 
+![[Source](https://www.wbtw.com/news/grand-strand/remembering-hurricane-hugo-35-years-later/)](https://www.wbtw.com/wp-content/uploads/sites/22/2024/09/Screenshot-2024-09-21-080156.png?strip=1)
 
-# Background 
+### Background 
 
-Ion concentrations of potassium (K), nitrate (NO3-), magnesium (Mg), calcium (Ca), and ammonium (NH4+) in Puerto Rico Streams were collected from 1988-1984. Hurricane Hugo hit Puerto Rico from Septermber 9-25, 1989, Shaefer et al. (2000) were interested in the hurricane's long-term impact on ion concentrations among four Puerto Rico streams in the Luquillo mountain region.  
+Ion concentrations of potassium (K), nitrate (NO3-), magnesium (Mg), calcium (Ca), and ammonium (NH4+) in Puerto Rico Streams were collected from 1988-1984. After Hurricane Hugo hit Puerto Rico in Septermber of 1989, Shaefer et al. (2000) were interested in the hurricane's long-term impact on ion concentrations among four Puerto Rico streams in the Luquillo mountain region.  
 
 
-# Data
+
+### Data
 Data is downloaded from [McDowell and International Institute Of Tropical Forestry (IITF) 2024](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064). 
 
+### Methods
+All .csv files are cleaned using 1_clean_data.R and moved into a output/output.csv. 1_clean_data.R filters individual .csv files for relevant dates (1988-1994) and selects only relevant columns (Sample_ID, Sample_Date, K, NO3-N, NH4-N, Mg, Ca). Then, moving_average() function, defined in R/moving-average.R, is applied to each individually subsetted data frame to calculate the 9-week moving averages. The resulting four dataframes are binded by rows and pivoted longer for faceting by ion. 
 
+```{r}
+#| output: false
+# load package
+library(tidyverse)
+```
 
-
-# Methods
-
-All .csv files are cleaned using 1_clean_data.R. This script filters for relevant dates (1988-1994) and selects only relevant columns (Sample_ID, Sample_Date, K, `NO3-N`, `NH4-N`, Mg, Ca). Then, moving_average(), defined in R/moving-average.R, is applied to each individually subsetted data to calculate the 9-week moving averages. The resulting four dataframes are binded by rows and pivoted longer for faceting by ion. 
+```{r}
+# load cleaned data 
+streams_pivot <- read_csv("../output/output.csv")
+```
 
 Use ggplot to plot data. 
 
 Plot time on the x-axis, and mean ion concentration on the y-axis. Facet_wrap() by ion and stack them over each other. Add a vertical line on September 17, 1989 to represent date of Hurricane Hugo event. 
 
+
 ```{r}
+# reorder the ions to match figure 3
+streams_pivot$ion <- factor(
+  streams_pivot$ion,
+  levels = c("K", "NO3", "Mg", "Ca", "NH4")
+)
+```
 
-# load package
-library(tidyverse)
-
-# use cleaned data
-streams_pivot <- read_csv("../output/output.csv")
 
 
+```{r}
 # plot
-figure_3 <- ggplot(
+fig3 <- ggplot(
   streams_pivot,
   mapping = aes(
     x = window_start,
@@ -41,14 +53,14 @@ figure_3 <- ggplot(
     color = stream,
     linetype = stream
   )
-) +
+  ) +
   geom_line() +
-  facet_wrap(~ion, scales = "free", ncol = 1, ) +
+  facet_wrap(~ion, scales = "free", ncol = 1, strip.position = "left" ) +
   labs(
     x = "Date",
-    y = "ion concentration",
-    title = " Concentrations in PR Streams"
-  ) +
+    y = "Ion concentration",
+    caption = "Concentrations of ions before and after Hurricane Hugo in four Puerto Rico streams. "
+    ) +
   geom_vline(xintercept = ymd("1989-09-17"), color = "darkgrey") +
   theme_bw()
 ```
@@ -56,8 +68,8 @@ figure_3 <- ggplot(
 
 # Results
 
-Plot the results.
+Print the result.
 
 ```{r}
-figure_3
+fig3
 ```
