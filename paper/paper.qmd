@@ -1,11 +1,6 @@
 --- 
 title: "Time series of ion concentrations in Puerto Rico streams before and after Hurricane Hugo (1989)"
-format: 
-  html:
-    theme: "pulse"
-execute:
-  message: false
-  warning: false
+format: html
 ---
 
 ![[Source](https://www.wbtw.com/news/grand-strand/remembering-hurricane-hugo-35-years-later/)](https://www.wbtw.com/wp-content/uploads/sites/22/2024/09/Screenshot-2024-09-21-080156.png?strip=1)
@@ -55,7 +50,6 @@ fig3 <- ggplot(
   mapping = aes(
     x = window_start,
     y = mean_concentration,
-    color = stream,
     linetype = stream
   )
   ) +
