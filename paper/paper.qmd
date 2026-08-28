@@ -24,6 +24,7 @@ library(tidyverse)
 ```
 
 ```{r}
+#| output: false
 # load cleaned data 
 streams_pivot <- read_csv("../output/output.csv")
 ```
@@ -70,5 +71,6 @@ fig3 <- ggplot(
 Print the result.
 
 ```{r}
+#| warning: false
 fig3
 ```

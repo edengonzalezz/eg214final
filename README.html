@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Time series of ion concentrations in Puerto Rico streams before and after Hurricane Hugo (1989)</title>
+<title>readme</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,55 +26,20 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="paper_files/libs/clipboard/clipboard.min.js"></script>
-<script src="paper_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="paper_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="paper_files/libs/quarto-html/popper.min.js"></script>
-<script src="paper_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="paper_files/libs/quarto-html/anchor.min.js"></script>
-<link href="paper_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="paper_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="paper_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="paper_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="paper_files/libs/bootstrap/bootstrap-917079515d91bccb85b543faf8aa8bb6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="README_files/libs/clipboard/clipboard.min.js"></script>
+<script src="README_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="README_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="README_files/libs/quarto-html/popper.min.js"></script>
+<script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="README_files/libs/quarto-html/anchor.min.js"></script>
+<link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="README_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="README_files/libs/bootstrap/bootstrap-917079515d91bccb85b543faf8aa8bb6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -85,93 +50,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Time series of ion concentrations in Puerto Rico streams before and after Hurricane Hugo (1989)</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
+<section id="ion-concentrations-in-puerto-rico-streams-before-and-after-hurricane-hugo-1989" class="level1">
+<h1>Ion concentrations in Puerto Rico streams before and after Hurricane Hugo (1989)</h1>
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
+<p>This repository contains R code for the replication of Figure 3 from <a href="https://www.cambridge.org/core/journals/journal-of-tropical-ecology/article/effects-of-hurricane-disturbance-on-stream-water-concentrations-and-fluxes-in-eight-tropical-forest-watersheds-of-the-luquillo-experimental-forest-puerto-rico/2511D4A53DA2C95406014ED75441E77B">Schaefer et al.&nbsp;(2000)</a> (see below), which graphs the concentration of five different ions in different streams in Puerto Rico before and after Hurricane Hugo.</p>
+<p>The graph places Year on the x-axis (1988-1994) facets by ion (potassium, nitrate, magnesium, calcium, and amonium), and plots the 9-week moving average ion concentrations among four streams (Puente Roto Mameyes, Bisley Quebrada 1, Bisley Quebrada 2, Bisley Quebrada 3) on the y-axis.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://www.wbtw.com/wp-content/uploads/sites/22/2024/09/Screenshot-2024-09-21-080156.png?strip=1" class="img-fluid figure-img"></p>
-<figcaption><a href="https://www.wbtw.com/news/grand-strand/remembering-hurricane-hugo-35-years-later/">Source</a></figcaption>
+<p><img src="figs/figure3schaefer2000.png" class="img-fluid figure-img"></p>
+<figcaption><a href="https://www.cambridge.org/core/journals/journal-of-tropical-ecology/article/effects-of-hurricane-disturbance-on-stream-water-concentrations-and-fluxes-in-eight-tropical-forest-watersheds-of-the-luquillo-experimental-forest-puerto-rico/2511D4A53DA2C95406014ED75441E77B">Schaefer et al.&nbsp;(2000)</a></figcaption>
 </figure>
 </div>
-<section id="background" class="level3">
-<h3 class="anchored" data-anchor-id="background">Background</h3>
-<p>Ion concentrations of potassium (K), nitrate (NO3-), magnesium (Mg), calcium (Ca), and ammonium (NH4+) in Puerto Rico Streams were collected from 1988-1984. After Hurricane Hugo hit Puerto Rico in Septermber of 1989, Shaefer et al.&nbsp;(2000) were interested in the hurricane’s long-term impact on ion concentrations among four Puerto Rico streams in the Luquillo mountain region.</p>
 </section>
-<section id="data" class="level3">
-<h3 class="anchored" data-anchor-id="data">Data</h3>
-<p>Data is downloaded from <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064">McDowell and International Institute Of Tropical Forestry (IITF) 2024</a>.</p>
+<section id="contents" class="level2">
+<h2 class="anchored" data-anchor-id="contents">Contents</h2>
+<p>The GitHub reprository contains the following:</p>
+<ul>
+<li>1_clean_data.R
+<ul>
+<li>R script that processes files from data/ and creates clean data files, i.e., output.csv.</li>
+</ul></li>
+<li>data/
+<ul>
+<li>four downloaded .csv files, each corresponding to a stream in the study.</li>
+</ul></li>
+<li>docs/
+<ul>
+<li>paper.html, the rendered quarto document of analysis.</li>
+</ul></li>
+<li>figs/
+<ul>
+<li>.png of rendered figure from paper.qmd</li>
+</ul></li>
+<li>output/
+<ul>
+<li>output.csv, a cleaned .csv file that combines all files in data/ into a single file to be used for analysis.</li>
+</ul></li>
+<li>paper/
+<ul>
+<li>paper.qmd, which runs the analysis and generates the figure.</li>
+</ul></li>
+<li>R/
+<ul>
+<li>moving_average.R, which creates a function that calculates the 9-week moving average of ion concentrations for each stream.</li>
+</ul></li>
+<li>scratch/
+<ul>
+<li>exploratory R scripts.</li>
+</ul></li>
+</ul>
 </section>
-<section id="methods" class="level3">
-<h3 class="anchored" data-anchor-id="methods">Methods</h3>
-<p>All .csv files are cleaned using 1_clean_data.R and moved into a output/output.csv. 1_clean_data.R filters individual .csv files for relevant dates (1988-1994) and selects only relevant columns (Sample_ID, Sample_Date, K, NO3-N, NH4-N, Mg, Ca). Then, moving_average() function, defined in R/moving-average.R, is applied to each individually subsetted data frame to calculate the 9-week moving averages. The resulting four dataframes are binded by rows and pivoted longer for faceting by ion.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load package</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load cleaned data </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>streams_pivot <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../output/output.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Use ggplot to plot data.</p>
-<p>Plot time on the x-axis, and mean ion concentration on the y-axis. Facet_wrap() by ion and stack them over each other. Add a vertical line on September 17, 1989 to represent date of Hurricane Hugo event.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reorder the ions to match figure 3</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>streams_pivot<span class="sc">$</span>ion <span class="ot">&lt;-</span> <span class="fu">factor</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  streams_pivot<span class="sc">$</span>ion,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"K"</span>, <span class="st">"NO3"</span>, <span class="st">"Mg"</span>, <span class="st">"Ca"</span>, <span class="st">"NH4"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  streams_pivot,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> window_start,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> mean_concentration,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> stream</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>ion, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">strip.position =</span> <span class="st">"left"</span> ) <span class="sc">+</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ion concentration"</span>,</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Concentrations of ions before and after Hurricane Hugo in four Puerto Rico streams. "</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">ymd</span>(<span class="st">"1989-09-17"</span>), <span class="at">color =</span> <span class="st">"darkgrey"</span>) <span class="sc">+</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<section id="data-access" class="level2">
+<h2 class="anchored" data-anchor-id="data-access">Data access</h2>
+<p>The .zip file containing the data provided by the Environmental Data Initiative were downloaded from <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064">McDowell and International Institute Of Tropical Forestry (IITF) 2024</a>.</p>
 </section>
-<section id="results" class="level1">
-<h1>Results</h1>
-<p>Print the result.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="paper_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="contributors" class="level2">
+<h2 class="anchored" data-anchor-id="contributors">Contributors</h2>
+<p><span class="citation" data-cites="Karlavramos">@Karlavramos</span> <span class="citation" data-cites="olivrwitt">@olivrwitt</span></p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024. “Chemistry of Stream Water from the Luquillo Mountains.” Environmental Data Initiative. <a href="https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458">https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458</a>.</p>
+<p>Schaefer, Douglas. A., William H. McDowell, Fredrick N. Scatena, and Clyde E. Asbury. 2000. “Effects of Hurricane Disturbance on Stream Water Concentrations and Fluxes in Eight Tropical Forest Watersheds of the Luquillo Experimental Forest, Puerto Rico.” Journal of Tropical Ecology 16 (2): 189–207. <a href="https://doi.org/10.1017/s0266467400001358">https://doi.org/10.1017/s0266467400001358.</a>.</p>
+</section>
 </section>
 
 </main>
