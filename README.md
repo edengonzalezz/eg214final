@@ -9,8 +9,8 @@ The graph places Year on the x-axis (1988-1994) facets by ion (potassium, nitrat
 
 
 
-![[Schaefer et al. (2000)](https://www.cambridge.org/core/journals/journal-of-tropical-ecology/article/effects-of-hurricane-disturbance-on-stream-water-concentrations-and-fluxes-in-eight-tropical-forest-watersheds-of-the-luquillo-experimental-forest-puerto-rico/2511D4A53DA2C95406014ED75441E77B)](../figs/figure3schaefer2000.png)
-
+![](figs/figure3schaefer2000.png)
+[Schaefer et al. (2000)](https://www.cambridge.org/core/journals/journal-of-tropical-ecology/article/effects-of-hurricane-disturbance-on-stream-water-concentrations-and-fluxes-in-eight-tropical-forest-watersheds-of-the-luquillo-experimental-forest-puerto-rico/2511D4A53DA2C95406014ED75441E77B)
 
 ## Contents
 
