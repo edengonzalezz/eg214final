@@ -3,11 +3,13 @@
 
 
 ## Purpose
-This repository contains R code for the replication of Figure 3 from [Schaefer et al. (2000)](https://www.cambridge.org/core/journals/journal-of-tropical-ecology/article/effects-of-hurricane-disturbance-on-stream-water-concentrations-and-fluxes-in-eight-tropical-forest-watersheds-of-the-luquillo-experimental-forest-puerto-rico/2511D4A53DA2C95406014ED75441E77B), which graphs the concentration of five different ions in different streams in Puerto Rico before and after Hurricane Hugo. The graph places Year on the x-axis (1988-1994) facets by ion (potassium, nitrate, magnesium, calcium, and amonium), and plots the 9-week moving average ion concentrations among four streams (Puente Roto Mameyes, Bisley Quebrada 1, Bisley Quebrada 2, Bisley Quebrada 3) on the y-axis.
+This repository contains R code for the replication of Figure 3 from [Schaefer et al. (2000)](https://www.cambridge.org/core/journals/journal-of-tropical-ecology/article/effects-of-hurricane-disturbance-on-stream-water-concentrations-and-fluxes-in-eight-tropical-forest-watersheds-of-the-luquillo-experimental-forest-puerto-rico/2511D4A53DA2C95406014ED75441E77B) (see below), which graphs the concentration of five different ions in different streams in Puerto Rico before and after Hurricane Hugo. 
+
+The graph places Year on the x-axis (1988-1994) facets by ion (potassium, nitrate, magnesium, calcium, and amonium), and plots the 9-week moving average ion concentrations among four streams (Puente Roto Mameyes, Bisley Quebrada 1, Bisley Quebrada 2, Bisley Quebrada 3) on the y-axis.
 
 
 
-![](figure3schaefer2000.png)
+![[Schaefer et al. (2000)](https://www.cambridge.org/core/journals/journal-of-tropical-ecology/article/effects-of-hurricane-disturbance-on-stream-water-concentrations-and-fluxes-in-eight-tropical-forest-watersheds-of-the-luquillo-experimental-forest-puerto-rico/2511D4A53DA2C95406014ED75441E77B)](../figs/figure3schaefer2000.png)
 
 
 ## Contents

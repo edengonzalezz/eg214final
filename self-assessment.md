@@ -14,7 +14,7 @@ Not yet met. Analysis in the scratch/ folder yields the expected output but it i
 Not yet met. Raw data is currently in its own folder. A stand alone output folder is yet to be created. 
 
 ## Code is properly organized
-The moving_average() function is defined in moving-average.R and it lives exclusively in the R/ folder. This function is used in the rest of the analysis, safety blanket code is kept in scratch/ folder.
+Kind of met. The moving_average() function is defined in moving-average.R and it lives exclusively in the R/ folder. This function is used in the rest of the analysis, safety blanket code is kept in scratch/ folder.
 
 
 # Document
